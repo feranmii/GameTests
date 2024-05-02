@@ -1,6 +1,6 @@
 {
-    "name": "hyper_crowd",
-    "short_name": "hyper_crowd",
+    "name": "Hyper Count",
+    "short_name": "Hyper Count",
     "start_url": "index.html",
     "display": "fullscreen",
     "background_color": "#231F20",

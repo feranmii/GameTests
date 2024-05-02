@@ -1,9 +1,9 @@
-const cacheName = "MVM-hyper_crowd-0.1.0";
+const cacheName = "MVM-Hyper Count-0.1.0";
 const contentToCache = [
     "Build/Builds.loader.js",
-    "Build/Builds.framework.js",
-    "Build/Builds.data",
-    "Build/Builds.wasm",
+    "Build/Builds.framework.js.br",
+    "Build/Builds.data.br",
+    "Build/Builds.wasm.br",
     "TemplateData/style.css"
 
 ];
