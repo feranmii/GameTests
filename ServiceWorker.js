@@ -1,4 +1,4 @@
-const cacheName = "MVM-Hyper Count-0.1.3";
+const cacheName = "MVM-Hyper Count-0.1.37";
 const contentToCache = [
     "Build/Builds.loader.js",
     "Build/Builds.framework.js.unityweb",
