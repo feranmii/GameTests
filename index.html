@@ -66,6 +66,38 @@
         dataUrl: buildUrl + "/Builds.data.unityweb",
         frameworkUrl: buildUrl + "/Builds.framework.js.unityweb",
         codeUrl: buildUrl + "/Builds.wasm.unityweb",
+   cacheControl: function (url) {
+
+    
+    if (localStorage.getItem("hc_v") !== "0.1.37") {
+          console.log("we have to clear cache");
+          localStorage.setItem("hc_v", "0.1.37");
+          if ('caches' in window) {
+            caches.keys().then(function (names) {
+              for (let name of names) caches.delete(name);
+            });
+          }
+          window.location.reload(true);
+        } else {
+          console.log("no need to clear");
+        }
+      
+     // Caching enabled for .data and .bundle files.
+     // Revalidate if file is up to date before loading from cache
+     if (url.match(/\.data/) || url.match(/\.bundle/)) {
+         return "must-revalidate";
+     }
+
+     // Caching enabled for .mp4 and .custom files
+     // Load file from cache without revalidation.
+     if (url.match(/\.mp4/) || url.match(/\.custom/)) {
+         return "immutable";
+     }
+ 
+     // Disable explicit caching for all other files.
+     // Note: the default browser cache may cache them anyway.
+     return "no-store";
+   },
         streamingAssetsUrl: "StreamingAssets",
         companyName: "MVM",
         productName: "Hyper Count",
