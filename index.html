@@ -21,9 +21,14 @@
     </div>
     <script>
       window.addEventListener("load", function () {
-      console.log("PRODUCT VERSION", "0.1.37");
-      console.log("SAVED PRODUCT VERSION", localStorage.getItem("hc_v"));
-
+      // console.log("PRODUCT VERSION", "0.1.37");
+      // console.log("SAVED PRODUCT VERSION", localStorage.getItem("hc_v"));
+      if ('caches' in window) {
+          caches.keys().then(function (names) {
+            for (let name of names) caches.delete(name);
+          });
+        }
+       // window.location.reload(true);
         if ("serviceWorker" in navigator) {
           navigator.serviceWorker.register("ServiceWorker.js");
         }
@@ -60,8 +65,7 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Builds.loader.js?v=0.1.37";
-      console.log("Loader URL is ", loaderUrl);
+      var loaderUrl = buildUrl + "/Builds.loader.js";
       var config = {
         arguments: [],
         dataUrl: buildUrl + "/Builds.data.unityweb",
