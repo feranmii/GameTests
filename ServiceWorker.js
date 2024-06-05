@@ -1,9 +1,9 @@
 const cacheName = "MVM-Hyper Count-0.1.39";
 const contentToCache = [
-    "Build/Web.loader.js",
-    "Build/Web.framework.js.unityweb",
-    "Build/Web.data.unityweb",
-    "Build/Web.wasm.unityweb",
+    "Build/Builds.loader.js",
+    "Build/Builds.framework.js.unityweb",
+    "Build/Builds.data.unityweb",
+    "Build/Builds.wasm.unityweb",
     "TemplateData/style.css"
 
 ];
